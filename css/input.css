@@ -1,1 +1,141 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Oracle';
+    src: url('../assets/fonts/ABCOracle-Book.woff2') format('woff2'),
+         url('../assets/fonts/ABCOracle-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oracle';
+    src: url('../assets/fonts/ABCOracle-Medium.woff2') format('woff2'),
+         url('../assets/fonts/ABCOracle-Medium.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    font-family: 'Oracle', sans-serif;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+button, input, textarea, select {
+    font-family: 'Oracle', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+  /* Base text styles */
+  .prose {
+    color: #1a1a1a;
+    line-height: 1.7;
+    font-size: 1.115rem;
+  }
+  
+  .prose h1, 
+  .prose h2, 
+  .prose h3, 
+  .prose h4 {
+    margin-top:1px;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  
+  .prose h1 { font-size: 2.25rem; }
+  .prose h2 { font-size: 1.875rem; }
+  .prose h3 { font-size: 1.5rem; }
+  .prose h4 { font-size: 1.25rem; }
+  
+  .prose p {
+    margin-top: 1rem;
+    /* margin-bottom: 1.25rem; */
+  }
+  
+  .prose ul, 
+  .prose ol,
+  .prose-invert ul,
+  .prose-invert ol {
+    margin: 1.5rem 0;
+    padding-left: 1.75rem;
+  }
+  
+  .prose ul li,   .prose-invert ul li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose ol li,   .prose-invert ol li {
+    list-style-type: decimal;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose a {
+    color: #D16555;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  .prose a:hover {
+    color: #b65648;
+  }
+  
+  .prose blockquote {
+    border-left: 4px solid #006155;
+    padding-left: 1rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #444;
+    background: #f9f9f9;
+  }
+  
+  .prose img {
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .prose pre {
+    background: #1e1e1e;
+    color: #f8f8f2;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+  
+  .prose code {
+    background: #f5f5f5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.95em;
+  }
+  
+  .prose img{
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+  }
+  .prose-invert{
+    color:white;
+  }
+
+  .prose-invert a{
+    color:white;
+  }
+
+  .prose-invert a:hover{
+    color:#D16555;
+  }
+
+  .prose-invert blockquote{
+    border-left: 4px solid #D16555;
+  }

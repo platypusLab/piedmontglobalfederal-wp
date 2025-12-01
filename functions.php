@@ -141,7 +141,17 @@ function pgf_scripts() {
 	// Enqueue Tailwind CSS output file
 	wp_enqueue_style( 'pgf-tailwind', get_template_directory_uri() . '/css/output.css', array(), _S_VERSION );
 
+	// Enqueue AOS CSS
+	wp_enqueue_style( 'aos-css', get_template_directory_uri() . '/css/aos.css', array(), _S_VERSION );
+
 	wp_enqueue_script( 'pgf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+	// Enqueue AOS JS
+	wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/js/aos.js', array(), _S_VERSION, true );
+
+	// Enqueue Alpine.js
+	wp_enqueue_script( 'alpinejs', '//unpkg.com/alpinejs', array(), null, true );
+	wp_script_add_data( 'alpinejs', 'defer', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
