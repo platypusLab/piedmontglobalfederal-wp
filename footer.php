@@ -11,7 +11,7 @@
 
 ?>
 
-<footer class="bg-[linear-gradient(to_bottom,_#1F3131_50%,_#006155_100%)] text-white  overflow-hidden">
+<footer class="bg-[linear-gradient(to_bottom,_#1F3131_50%,_#006155_100%)] pt-20 text-white  overflow-hidden">
     <!-- Logo, Address, Footer Image -->
     <div class="flex flex-col md:flex-row items-start justify-between max-w-7xl mx-auto px-10 md:px-5 pt-8 gap-8">
         <!-- Logo and Address -->
