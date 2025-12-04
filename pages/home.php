@@ -241,6 +241,55 @@ get_header();
         </div>
     </section>
 
+    <?php if( have_rows('faqs') ): ?>
+<section class="py-20 bg-[#F9F8F6]">
+    <div class="max-w-4xl mx-auto px-6 text-center" x-data="{ active: null }">
+        <div class="mb-10">
+            <div
+                class="inline-flex items-center gap-2 rounded-full bg-[#1f3131] px-4 py-2 text-sm font-semibold text-white">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                FAQ
+            </div>
+            <h2 class="mt-4 text-3xl md:text-3xl font-bold text-gray-900">Frequently asked questions</h2>
+        </div>
+
+        <div class="divide-y divide-gray-200 text-left">
+            <?php $i = 0; while( have_rows('faqs') ): the_row(); $i++; 
+                $question = get_sub_field('question');
+                $answer = get_sub_field('answer');
+            ?>
+            <div class="py-4">
+                <button @click="active === <?= $i ?> ? active = null : active = <?= $i ?>"
+                    class="w-full flex justify-between items-center text-left focus:outline-none">
+                    <span class="font-bold text-gray-900 text-lg lg:text-xl"
+                        :class="{ 'text-[#1F3131]': active === <?= $i ?> }">
+                        <?php echo esc_html($question); ?>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-6 h-6 text-gray-500 transform transition-transform duration-200"
+                        :class="{ 'rotate-180 text-[#1F3131]': active === <?= $i ?> }" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path x-show="active !== <?= $i ?>" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M12 5v14m7-7H5" />
+                        <path x-show="active === <?= $i ?>" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" d="M19 12H5" />
+                    </svg>
+                </button>
+
+                <div x-show="active === <?= $i ?>" x-collapse
+                    class="mt-3 text-gray-700 prose text-base leading-relaxed">
+                    <?php echo wp_kses_post($answer); ?>
+                </div>
+            </div>
+            <?php endwhile; ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
 </main>
 
 <section class="bg-[#1F3131] py-28 text-center" aria-labelledby="industry-cta-title">
@@ -265,14 +314,7 @@ get_header();
                 aria-label="Schedule a consultation - opens contact form">
                 Schedule a Consultation
             </a>
-            <a href="<?php the_field('industry_cta_secondary_button_link'); ?>"
-                class="flex items-center text-[#F9F8F6] font-medium text-base lg:text-lg hover:underline focus:outline-none focus:ring-2 focus:ring-[#F9F8F6] focus:ring-offset-2 focus:ring-offset-[#1F3131] transition-colors duration-200">
-                <?php the_field('industry_cta_secondary_button_title'); ?>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </a>
+           
         </div>
     </div>
 </section>
